@@ -1,0 +1,66 @@
+html {
+    color: rgb(149, 209, 60);
+    background-image: url(https://media.architecturaldigest.com/photos/5be9cd317c86c80e83b4b80a/master/w_3000,h_2000,c_limit/The%20Spaniard2%20-%20photo%20credit%20Brittany%20Ambridge.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.container {
+    margin: auto;
+    text-align: center;
+    background: #000;
+    width: 500px;
+    margin-left: 41.25%;
+    height: 150px;
+    
+}
+
+.contentTopper {
+    float: left;
+    margin-top: 150px;
+    background-color: black;
+    margin-left: 50px;
+}
+
+.billboard {
+    background-color: black;
+    width: 25%;
+    margin-left: 38.5%;
+    text-align: center;
+    height: 315px;
+    margin-top: 165px;
+}
+
+.aside {
+    background-color: black;
+    float: right;
+    margin-right: 150px;
+    margin-top: -300px;
+    width: 400px;
+    height: 200px;
+}
+
+h1 {
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h4 {
+    font-size: 40px;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+footer {
+    margin-top: 40%;
+    height: 300px;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    text-align: center;
+}
