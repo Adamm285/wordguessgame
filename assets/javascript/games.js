@@ -1,39 +1,52 @@
 // var wordBank = ["guinness", "black n black", "irish cider", "fat frog", "whiskey"];
 
 
-//create an array of words
 var words = ["rabbit", "snail", "airport", "carrots", "river"]
 var word = words[Math.floor(Math.random() * words.length)];
-var answerArray = word;
 var wins = 0;
 var guessesLeft = 6;
-var lettersGuessed = document.getElementById("used-letter");
 var wrongGuess = [];
-var remainingLetters = word.length;
-var wins = document.getElementById("wins");
+var remainingLetters = [];
 var answerArray = [];
 var usedLetters = [];
-var guess = document.getElementById("remaining-letters");
 var correctGuess = [];
-
-// let wrongGuess = document.getElementById("wins")
-// let correctGuess = document.getElementById("wins")
-// ****** works
-
-// *****
-
-// var remainingLetters = document.getElementById("remaining-letters");
-// var guessesLeft = document.getElementById("guesses-left");
-// var answerArray = document.getElementById("answer-array");
+var guess = "";
 
 
-for (var i = 0; i < word.length; i++) {
-    answerArray[i] = "_";}
 document.onkeyup = function (event) {
-    guess.textContent = event.key;
-    lettersGuessed.push("used-letter");
-    console.log(lettersGuessed);
+    guess = event.key;
+    guess = guess.toLowerCase();
+
+
+    if (guess.search(/[a-z]/) === 0 && guess.length == 1) {
+        usedLetters.push(guess);
+        document.getElementById("used-letters").innerHTML = usedLetters;
+
+        if (word.includes(guess) == true) {
+            answerArray.push(guess);
+            document.getElementById("answer-array").innerHTML = answerArray;
+            for (var i = 0; i < word.length; i++) {
+                // answerArray[i] = guess; made the guessed letter multiply 
+            }
+        } else {
+
+        }
+    }
 }
+
+console.log(word);
+
+// 10-21 i have the used letters posting i would like to make them not repeat after guessed once
+// my word doesn't limit itself to the letters of the word
+// would like wins to track wins
+// would like the guesses left number to decrease after every wrong guess
+
+
+// document.onkeyup = function (event) {
+//     guess.textContent = event.key;
+//     lettersGuessed.push(guess);
+//     console.log(lettersGuessed);
+// }
 // document.onkeyup = (k) => {
 //     let guess= k.key;
 //     if(guess.includes("answer-array")){
@@ -54,10 +67,6 @@ document.onkeyup = function (event) {
 // test
 // answerArray.textContent = "test test test" + word;
 
-// usedLetters.textContent = "used-letters" + usedLetters;
-
-
-
 
 // note to self tomorrow maybe i can use the working tags above to displayed my info and 
 // delete the conflict above
@@ -67,13 +76,9 @@ document.onkeyup = function (event) {
 // this code below allows the "remaining-letters" span on the html be updated
 // still needs more code to keep letters guesses so they can be displayed
 
-// var guess = document.getElementById("remaining-letters");
-// document.onkeyup = function (event) {
-//     guess.textContent = event.key;
-//     console.log(guess);
-//     console.log("remaining-letters");
-// }
-// document.getElementById("remaining-letters").innerHTML = guess;
+
+
+
 // ************
 
 // ************
@@ -122,45 +127,6 @@ document.onkeyup = function (event) {
 // // document.getElementById("answer-array").innerHTML = answerArray.join(" ");
 // //Congratulate the player
 // alert("Well done! The answer was " + word);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
