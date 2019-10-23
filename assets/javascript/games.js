@@ -6,16 +6,26 @@ var word = words[Math.floor(Math.random() * words.length)];
 var wins = 0;
 var guessesLeft = 6;
 var wrongGuess = [];
-var remainingLetters = [];
 var answerArray = [];
 var usedLetters = [];
 var correctGuess = [];
-var guess = "";
+var wrongGuess = "";
+var guessArray = word.toLowerCase().split("");
+
+function mattSays() {
+    for (var i = 0; i < word.length; i++) {
+        answerArray[i] = "_";
+    }
+}
+mattSays();
+// this code above will only happen once CALL LATER 
+
 
 
 document.onkeyup = function (event) {
     guess = event.key;
     guess = guess.toLowerCase();
+    guessesLeft--;
 
 
     if (guess.search(/[a-z]/) === 0 && guess.length == 1) {
@@ -23,23 +33,47 @@ document.onkeyup = function (event) {
         document.getElementById("used-letters").innerHTML = usedLetters;
 
         if (word.includes(guess) == true) {
-            answerArray.push(guess);
-            document.getElementById("answer-array").innerHTML = answerArray;
+
             for (var i = 0; i < word.length; i++) {
-                // answerArray[i] = guess; made the guessed letter multiply 
+
+                if (guessArray[i] == guess) {
+                    answerArray[i] = guess;
+                    document.getElementById("answer-array").innerHTML = answerArray;
+
+                }
             }
         } else {
 
         }
     }
 }
-
+guessesLeft.textContent = "guesses remaining: " + guessesLeft;
 console.log(word);
+
+
+// search the guess to ensure its a-z & 
+// push guess into usedLetters holds all guesses need for loop
+// displaing to usedletters
+
+
+// if guess(letter) includes word pass as true
+// add guess(letter) to billboard 
+// displays to answer arra
+
+
+
+
+
+
+
 
 // 10-21 i have the used letters posting i would like to make them not repeat after guessed once
 // my word doesn't limit itself to the letters of the word
 // would like wins to track wins
 // would like the guesses left number to decrease after every wrong guess
+// neg index means letter has been guessed
+// google "timeout" 
+// car into C A R make array[car] take letters and set in array... array of arrays 
 
 
 // document.onkeyup = function (event) {
@@ -59,7 +93,7 @@ console.log(word);
 
 // }
 // document.getElementById("answer-array").innerHTML = guess;
-// guessesLeft.textContent = "guesses remaining: " + guessesLeft;
+
 // remainingLetters.textContent = "Guessed letters: " + remainingLetters;
 // wins.textContent = "wins: " + wins;
 
