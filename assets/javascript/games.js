@@ -26,10 +26,10 @@ document.onkeyup = function (event) {
     guess = event.key;
     guess = guess.toLowerCase();
 
-if (gameStart == true){
-    // think of each element on the page that would need to be reset
+    if (gameStart == true) {
+        // think of each element on the page that would need to be reset
 
-}
+    }
     // search the guess to ensure its a-z & 
     if (guess.search(/[a-z]/) === 0 && guess.length == 1) {
 
@@ -62,11 +62,11 @@ if (gameStart == true){
     if (guessesLeft == 0) {
         alert("everyone is a winner but you! word was " + word);
         gameStart == true;
-        
+
     } else if (answerArray.join("") == word) {
-        alert("matt is a winner but you suck! word was " + word);
+        alert("Winner Winner chicken dinner word was " + word);
         gameStart == true;
-        
+
     }
 
 }
